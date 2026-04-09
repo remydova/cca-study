@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+  <!-- full-bleed navy background (maskable) -->
+  <rect width="192" height="192" fill="#0c0c18"/>
+
+  <!-- open book -->
+  <g transform="translate(96,96)">
+    <!-- left page -->
+    <path d="M-42,-28 C-42,-28 -8,-24 -4,-20 L-4,36 C-8,32 -42,36 -42,36 Z"
+          fill="#1a1a2e" stroke="#d4956a" stroke-width="1.5"/>
+    <!-- right page -->
+    <path d="M42,-28 C42,-28 8,-24 4,-20 L4,36 C8,32 42,36 42,36 Z"
+          fill="#1a1a2e" stroke="#d4956a" stroke-width="1.5"/>
+    <!-- spine -->
+    <path d="M-4,-20 L-4,36 M4,-20 L4,36" stroke="#d4956a" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- left lines -->
+    <line x1="-34" y1="-10" x2="-10" y2="-12" stroke="#7fb5a0" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+    <line x1="-34" y1="-2"  x2="-10" y2="-4"  stroke="#7fb5a0" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+    <line x1="-34" y1="6"   x2="-10" y2="4"   stroke="#7fb5a0" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+    <!-- right lines -->
+    <line x1="10"  y1="-12" x2="34"  y2="-10" stroke="#9b8bb4" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+    <line x1="10"  y1="-4"  x2="34"  y2="-2"  stroke="#9b8bb4" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+    <line x1="10"  y1="4"   x2="34"  y2="6"   stroke="#9b8bb4" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+    <!-- small moon above -->
+    <circle cx="0" cy="-46" r="9" fill="#d4956a" opacity="0.9"/>
+    <circle cx="3.5" cy="-48" r="6.5" fill="#0c0c18"/>
+  </g>
+
+  <!-- label -->
+  <text x="96" y="162"
+        font-family="Georgia,serif" font-style="italic" font-size="13"
+        fill="#d4956a" text-anchor="middle">the quiet study</text>
+</svg>

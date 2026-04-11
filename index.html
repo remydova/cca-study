@@ -354,6 +354,18 @@ const CARDS = [
     back:"Cowork for file-based knowledge work, document creation, and scheduled automation — no terminal needed. Claude Code for code changes, git workflows, and pushing to GitHub — requires terminal.",
     example:"used Cowork to create remy-studio-overview.md and set up monday scheduling. used Claude Code to build miso floats, push all three repos, and manage CLAUDE.md files."
   },
+  {
+    id:16,
+    front:"what is programmatic enforcement vs prompt-based guidance?",
+    back:"when a behavior must be guaranteed, enforce it in code rather than relying on the prompt.",
+    example:"video-generator.html always overwrites the last card with getCloser() in renderOutput() — even if Claude drifts and ignores the prompt instruction, the rotating Remy closer is enforced by the code itself and cannot be skipped."
+  },
+  {
+    id:17,
+    front:"what is silent agent improvement?",
+    back:"when Claude Code adds a safety net you didn't explicitly ask for because it recognized the need.",
+    example:"asked Claude Code to add a rotating closer — it also added programmatic enforcement in renderOutput() so the closer can never be overridden by Claude drift. good agentic judgment means anticipating failure modes."
+  },
 ];
 
 // ── localStorage ──────────────────────────────────────────────────────────────

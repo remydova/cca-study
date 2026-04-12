@@ -366,6 +366,66 @@ const CARDS = [
     back:"when Claude Code adds a safety net you didn't explicitly ask for because it recognized the need.",
     example:"asked Claude Code to add a rotating closer — it also added programmatic enforcement in renderOutput() so the closer can never be overridden by Claude drift. good agentic judgment means anticipating failure modes."
   },
+  {
+    id:18,
+    front:"what is the Read tool in Claude Code?",
+    back:"reads any file in the working directory — Claude uses this to understand existing code before editing.",
+    example:"Claude Code read newsletter-generator.html before making changes so it understood the full structure first."
+  },
+  {
+    id:19,
+    front:"what is the Write tool in Claude Code?",
+    back:"creates brand new files from scratch. different from Edit which modifies existing files.",
+    example:"Claude Code used Write to create CLAUDE.md, miso-floats.html, and index.html in cca-study — all new files that didn't exist yet."
+  },
+  {
+    id:20,
+    front:"what is the Edit tool in Claude Code?",
+    back:"makes precise targeted changes to existing files without rewriting the whole thing. more efficient than Write for modifications.",
+    example:"Claude Code used Edit to update the rotating closers in video-generator.html — it changed only the specific lines needed."
+  },
+  {
+    id:21,
+    front:"what is the Bash tool in Claude Code?",
+    back:"runs terminal commands, scripts, and git operations directly. the most powerful tool — can install packages, push to GitHub, run tests.",
+    example:"git add, commit, and push all ran through Bash. also why the ! prefix matters — Bash executes whatever you give it."
+  },
+  {
+    id:22,
+    front:"what is the Glob tool in Claude Code?",
+    back:"finds files by pattern using wildcards. *.html matches all HTML files. src/**/*.py matches all python files anywhere inside src.",
+    example:"Claude Code could use Glob to find all HTML files in remy-studio before doing a bulk update across all of them."
+  },
+  {
+    id:23,
+    front:"what is the Grep tool in Claude Code?",
+    back:"searches file contents using regex or plain text — finds where specific code or text lives across many files. different from Glob which finds files by name.",
+    example:"searching for every place the Cloudflare proxy URL appears across all remy HTML files."
+  },
+  {
+    id:24,
+    front:"what is the Monitor tool in Claude Code?",
+    back:"watches a background process and reacts to each output line as it happens — used for long-running processes.",
+    example:"watching a local dev server startup and reacting when it says 'ready' before running tests."
+  },
+  {
+    id:25,
+    front:"what is the WebSearch tool in Claude Code?",
+    back:"searches the web for current information Claude doesn't have in training. used when answers could have changed since the knowledge cutoff.",
+    example:"Claude Code searching for the latest GitHub authentication docs when tokens kept failing."
+  },
+  {
+    id:26,
+    front:"what is the WebFetch tool in Claude Code?",
+    back:"fetches and parses the full content of a specific web page URL — more detailed than WebSearch which returns snippets.",
+    example:"fetching the full Anthropic support page to read exact Cowork scheduling instructions."
+  },
+  {
+    id:27,
+    front:"what is the difference between Glob and Grep?",
+    back:"Glob finds FILES by name pattern — *.html finds all HTML files. Grep searches FILE CONTENTS for text or regex — grep for 'getCloser' finds every file containing that function. use Glob to locate files, Grep to find what's inside them.",
+    example:"both are tested on CCA-F."
+  },
 ];
 
 // ── localStorage ──────────────────────────────────────────────────────────────

@@ -426,6 +426,126 @@ const CARDS = [
     back:"Glob finds FILES by name pattern — *.html finds all HTML files. Grep searches FILE CONTENTS for text or regex — grep for 'getCloser' finds every file containing that function. use Glob to locate files, Grep to find what's inside them.",
     example:"both are tested on CCA-F."
   },
+  {
+    id:28,
+    front:"what are parallel agentic sessions in Claude Code?",
+    back:"running multiple Claude Code sessions simultaneously in separate PowerShell windows — each session has its own context, working directory, and operates completely independently.",
+    example:"PowerShell 1 running Claude Code in mcp-chat for the MCP course, PowerShell 2 in cca-study adding flashcards, PowerShell 3 in remy-studio updating the video generator — all at the same time, none blocking the others."
+  },
+  {
+    id:29,
+    front:"what is the relationship between parallel sessions and multi-agent architecture?",
+    back:"running multiple Claude Code sessions simultaneously is the same concept as multi-agent architecture — independent agents handling different parts of a workflow in parallel rather than sequentially. this is Domain 1 of the CCA exam (27%).",
+    example:"instead of waiting for one Claude Code task to finish before starting another, you open a new PowerShell window and start a second agent on a different project immediately."
+  },
+  {
+    id:30,
+    front:"what is the difference between sequential and parallel agent execution?",
+    back:"sequential — one task finishes before the next starts. slower but simpler to manage. parallel — multiple agents run simultaneously on different tasks. faster but requires understanding which tasks are independent.",
+    example:"updating remy-studio video generator sequentially then adding cca flashcards is slow. opening two PowerShell windows and doing both at the same time is parallel execution — cutting total time in half."
+  },
+  {
+    id:31,
+    front:"what are the correct terms for Claude Code sessions and commands?",
+    back:"command — what you type to launch or run something. session — the active Claude Code instance running in a PowerShell window. invocation — formal term for launching a tool programmatically. API calls — used when an agent makes requests to an API, not for launching sessions.",
+    example:"'I have three Claude Code sessions running in parallel' is correct. 'I made three calls to Claude Code' would mean three API requests, not three windows."
+  },
+  {
+    id:32,
+    front:"what command launches Claude Code in a specific project?",
+    back:"cd into the project folder first, then type 'claude' to start the session. the working directory determines which project Claude Code has context for. each project has its own CLAUDE.md that Claude Code reads automatically on launch.",
+    example:"'cd C:\\Users\\gkstu\\Documents\\remy-studio' then 'claude' opens a session with full context of the remy-studio project."
+  },
+  {
+    id:33,
+    front:"what is the Claude Code CLI and how do you launch it?",
+    back:"CLI stands for Command Line Interface — you interact by typing commands in a terminal, not clicking buttons. Claude Code CLI is launched by typing 'claude' in PowerShell. it lives in your terminal, not in a browser or app.",
+    example:"opening PowerShell, navigating to remy-studio with 'cd', then typing 'claude' to start an agentic coding session."
+  },
+  {
+    id:34,
+    front:"what is the difference between Claude Code CLI and the Code Tab?",
+    back:"Claude Code CLI runs in PowerShell — it's a full agentic coding agent that reads files, runs git commands, installs packages, and pushes to GitHub. the Code Tab in Claude Desktop is a lighter interface for code-related chat inside the app.",
+    example:"used Claude Code CLI in PowerShell to build miso floats, push all repos, and create CLAUDE.md files. the Code tab at the top of Claude Desktop is NOT the same thing."
+  },
+  {
+    id:35,
+    front:"what are the three Claude tools and what is each for?",
+    back:"Chat — conversational AI in the browser or app, used for planning and questions. Cowork — desktop automation agent for file-based tasks and scheduled workflows, no terminal needed. Claude Code CLI — terminal-based agentic coding tool launched by typing 'claude' in PowerShell, for code, git, and technical workflows.",
+    example:"used Chat to plan Remy strategy, Cowork to automate Monday prep files, Claude Code CLI to build and deploy all five PWAs."
+  },
+  {
+    id:36,
+    front:"what is a CLI vs a GUI?",
+    back:"CLI (Command Line Interface) — you interact by typing text commands in a terminal, no buttons or mouse required. GUI (Graphical User Interface) — you interact by clicking buttons, menus, and windows.",
+    example:"Claude Code CLI is a CLI — you type 'claude' and interact with text prompts. Cowork is more like a GUI — you type in a chat box inside a visual desktop app. most powerful developer tools are CLIs because they are faster and more scriptable."
+  },
+  {
+    id:37,
+    front:"what is a virtual environment in Python and why does it matter?",
+    back:"a virtual environment (venv) is an isolated Python installation for a specific project — keeps that project's dependencies separate from everything else. created with 'uv venv' or 'python -m venv .venv'. always activate it before running the project.",
+    example:"creating a venv for the mcp-chat project so its dependencies like anthropic and mcp 1.8.0 don't conflict with other Python projects."
+  },
+  {
+    id:38,
+    front:"what is uv and why is it used instead of pip?",
+    back:"uv is a fast Python package installer and resolver — replaces pip for installing dependencies. significantly faster than pip and handles dependency conflicts better. installed with 'pip install uv' then used as 'uv pip install' or 'uv run'.",
+    example:"used uv to install anthropic, python-dotenv, prompt-toolkit, and mcp dependencies for the MCP course hands-on project."
+  },
+  {
+    id:39,
+    front:"what is a PATH error and why does it happen?",
+    back:"PATH is a list of folders Windows searches when you type a command. if a program is not in any PATH folder, Windows says command not found even if it is installed.",
+    example:"Claude Code installed correctly but 'claude' was not found because the install folder was not in PATH. fixed by adding C:\\Users\\gkstu\\.local\\bin to the PATH environment variable permanently."
+  },
+  {
+    id:40,
+    front:"what is the Windows App Execution Aliases issue with Python?",
+    back:"Windows creates fake python.exe aliases that open the Microsoft Store instead of running real Python. these aliases take priority in PATH over a real Python installation. fix: Windows key → search App execution aliases → toggle python.exe and python3.exe OFF.",
+    example:"installed Python 3.11 via winget but python --version still returned the Store prompt until aliases were disabled."
+  },
+  {
+    id:41,
+    front:"what is the difference between CLI and MCP?",
+    back:"CLI (Command Line Interface) is a way of interacting with programs by typing text commands in a terminal — it is an interface style. MCP (Model Context Protocol) is a communication standard that lets Claude connect to external tools and data sources — it is a protocol.",
+    example:"you use the CLI to run 'python main.py' in PowerShell, which starts an MCP client that connects to an MCP server. the CLI is how you launch it, MCP is what it does once running."
+  },
+  {
+    id:42,
+    front:"what is MCP (Model Context Protocol)?",
+    back:"a universal communication standard that lets Claude connect to external tools and data sources — like USB-C for AI. MCP defines exactly how Claude asks a tool 'what can you do?' and how the tool responds 'I can do these things.' any tool that implements MCP can connect to Claude the same way.",
+    example:"Gmail and Google Calendar connectors in Cowork are MCP servers — they use the MCP standard to expose their capabilities to Claude."
+  },
+  {
+    id:43,
+    front:"what are the three MCP primitives?",
+    back:"Tools — functions Claude can call and execute, like get_weather(city) or search_documents(query). Claude decides when to call them based on conversation context. Resources — data Claude can read for context, like documents or database records — read only, not executable. Prompts — reusable templates that define how Claude approaches a specific task, invoked with / like /summarize.",
+    example:"mcp_server.py in the MCP course has all three — stub tools like get_weather, a resource, and a prompt template."
+  },
+  {
+    id:44,
+    front:"what is an MCP tool vs an MCP resource?",
+    back:"MCP tool — a function Claude can execute that does something and returns a result. Claude calls it when it decides the tool is needed. MCP resource — read-only data Claude reads for context but cannot execute. key distinction: tools DO things, resources PROVIDE information.",
+    example:"get_weather('Kent OH') is a tool — it executes and returns current weather data. a background document Claude reads about Kent OH is a resource."
+  },
+  {
+    id:45,
+    front:"what is an MCP server vs an MCP client?",
+    back:"MCP server — exposes tools, resources, and prompts that Claude can use. it is the thing being connected to. MCP client — connects to the server, discovers what tools are available, and manages the communication loop with Claude.",
+    example:"mcp_server.py exposes get_weather and add tools. mcp_client.py connects to it and tells Claude what tools exist so Claude can decide when to call them."
+  },
+  {
+    id:46,
+    front:"what is the MCP tool use loop?",
+    back:"the sequence Claude follows when using MCP tools: 1) Claude receives a message and decides a tool is needed. 2) Claude returns stop_reason: tool_use with the tool name and parameters. 3) the client executes the tool on the MCP server. 4) the result is appended to conversation history as tool_result. 5) the full history is sent back to Claude. 6) Claude continues until stop_reason is end_turn.",
+    example:"this exact loop is what mcp_client.py implements in the MCP course TODO sections."
+  },
+  {
+    id:47,
+    front:"what is the MCP connection transport and why does it matter?",
+    back:"transport is how the MCP client and server communicate — two options: stdio (standard input/output, runs as a subprocess on the same machine, used for local tools) and SSE (Server Sent Events, connects over HTTP to a remote server).",
+    example:"the mcp-chat course project uses stdio transport — the client launches the server as a subprocess locally. Cowork's Gmail connector uses SSE transport — it connects to Google's remote MCP server over the internet."
+  },
 ];
 
 // ── localStorage ──────────────────────────────────────────────────────────────

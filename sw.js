@@ -1,4 +1,4 @@
-const CACHE = 'quiet-study-v1';
+const CACHE = 'quiet-study-v3';
 const ASSETS = ['./index.html', './manifest.json', './icon.svg'];
 
 self.addEventListener('install', e => {

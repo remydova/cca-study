@@ -546,6 +546,54 @@ const CARDS = [
     back:"transport is how the MCP client and server communicate — two options: stdio (standard input/output, runs as a subprocess on the same machine, used for local tools) and SSE (Server Sent Events, connects over HTTP to a remote server).",
     example:"the mcp-chat course project uses stdio transport — the client launches the server as a subprocess locally. Cowork's Gmail connector uses SSE transport — it connects to Google's remote MCP server over the internet."
   },
+  {
+    id:48,
+    front:"what is the difference between an AI architect and a production agent in an agentic workflow?",
+    back:"the architect plans, builds tools, and maintains consistency — the production agent executes recurring tasks autonomously.",
+    example:"claude in claude.ai is remy's architect — builds the content engine, fixes code, keeps remy's bible consistent. hyperagent is the production agent — reads weekly-content.json every sunday and generates pins, newsletter, and video clips automatically."
+  },
+  {
+    id:49,
+    front:"what is a weekly-content.json and why does it matter in an agentic pipeline?",
+    back:"a JSON file saved to github that acts as the shared data layer between two separate AI systems. the content engine writes it, hyperagent reads it.",
+    example:"remy's content engine generates newsletter, video cards, song rotation, and mood — saves to github — hyperagent fetches from raw.githubusercontent.com/remydova/remy-studio/main/weekly-content.json and uses it to generate all visual assets without any manual copy-paste."
+  },
+  {
+    id:50,
+    front:"what is firstFrameImage in video generation and why is it better than referenceImages?",
+    back:"firstFrameImage anchors the video generation to a specific starting frame — the clip literally animates from that image, making character appearance frame-accurate. referenceImages only provides style cues.",
+    example:"using remy-desk.png as firstFrameImage means remy's hair, sweater, and aesthetic are exact in the generated clip. referenceImages parameter is not supported on veo 3.1 — firstFrameImage is the correct approach."
+  },
+  {
+    id:51,
+    front:"what is the difference between included usage credits and bonus credits in hyperagent?",
+    back:"included usage is what your monthly plan covers — $50 on starter plan. bonus credits are additional credits added to your account that cover overages beyond the included amount.",
+    example:"hyperagent starter plan includes $50/month. video generation pushed usage to $83 — the $33 overage drew from $1,000 bonus credits automatically. the plan fee ($20/month) pays for access, credits pay for usage."
+  },
+  {
+    id:52,
+    front:"what is veo 3.1 and what does it include natively?",
+    back:"veo 3.1 is google's video generation model available in hyperagent. it includes native audio generation — ambient sounds like rain and wind chimes are baked into the clip at generation time, not added separately.",
+    example:"the miso window clip had rain sounds and ambient atmosphere already in it when downloaded — no separate audio track needed for the ambient layer, just add remy's music on top in filmora."
+  },
+  {
+    id:53,
+    front:"what is the batch generation strategy for video libraries?",
+    back:"generate a large library of clips once using all available reference images, then rotate through them weekly instead of generating new clips every week. saves significant credits and time.",
+    example:"generated 26 video clips in one session covering all remy moods — remy at desk, miso sleeping, crochet, rain window, atmospheric scenes. weekly sunday workflow just picks the matching clip from the library — no new generation needed for months."
+  },
+  {
+    id:54,
+    front:"what is a spending limit in hyperagent and why does it matter?",
+    back:"a cap on how much overage you can accumulate beyond your plan's included credits in one billing period. set too low and usage pauses mid-session. set too high and you risk unexpected costs.",
+    example:"spending limit set to $5 caused hyperagent to pause during video clip generation session. raised to $50-100 to allow the batch library session to complete without interruption."
+  },
+  {
+    id:55,
+    front:"what is the raw github url pattern and why does hyperagent use it?",
+    back:"raw.githubusercontent.com/[username]/[repo]/[branch]/[filename] returns the raw file contents without any github UI wrapper — no authentication needed for public repos. hyperagent uses it because the github integration sometimes hits session restrictions.",
+    example:"https://raw.githubusercontent.com/remydova/remy-studio/main/weekly-content.json — hyperagent fetches this directly every sunday to read the week's content without needing github oauth."
+  },
 ];
 
 // ── localStorage ──────────────────────────────────────────────────────────────
